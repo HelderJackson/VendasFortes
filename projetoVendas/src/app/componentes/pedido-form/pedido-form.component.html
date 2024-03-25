@@ -1,0 +1,32 @@
+<mat-card>
+<h1>{{btnTitulo}}</h1>
+
+<form [formGroup]="pedidoForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <input type="hidden" formControlName="id">
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>Fornecedor:</mat-label>
+            <input matInput type="text" formControlName="nomeFornecedor" placeholder="Digite o ID do Fornecedor" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>Produto:</mat-label>
+            <input matInput type="text" formControlName="nomeProduto" placeholder="Digite o ID do Produto" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>Quantidade:</mat-label>
+            <input matInput type="text" formControlName="quantidade" placeholder="Digite a Quantidade." required>
+        </mat-form-field>
+    </div>
+
+    <div class="btn-box">
+        <button type="submit" [disabled]="!pedidoForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+        <button routerLink="" mat-flat-button color="primary">Voltar</button>
+    </div>
+</form>   
+</mat-card>

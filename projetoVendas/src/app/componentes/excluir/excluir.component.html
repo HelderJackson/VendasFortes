@@ -1,0 +1,13 @@
+<mat-card>
+<div *ngIf="fornecedor">
+    <h1>Deseja confirmar a exclusão? </h1>
+    <div>
+        <p style="font-style: bold;">Fornecedor:</p>
+        <p>{{fornecedor.nomeDoContato}}</p>
+    </div>
+    <div>
+        <button mat-raised-button color="warn" (click)="excluir()">Confirmar Exclusão</button>
+        <button mat-raised-button (click)="cancelar()">Cancelar</button>
+    </div>
+</div>
+</mat-card>

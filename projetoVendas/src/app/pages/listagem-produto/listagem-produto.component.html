@@ -1,0 +1,52 @@
+<mat-card>
+    <div>
+        <h2>PRODUTOS</h2>
+    </div>
+    <table mat-table [dataSource]="produtos" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="ID">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let produto"> {{produto.id}} </td>
+          </ng-container>
+    
+        <ng-container matColumnDef="NOME">
+          <th mat-header-cell *matHeaderCellDef> NOME </th>
+          <td mat-cell *matCellDef="let produto"> {{produto.nome}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="DESCRIÇÃO">
+          <th mat-header-cell *matHeaderCellDef> CNPJ </th>
+          <td mat-cell *matCellDef="let produto"> {{produto.descricao}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="DATA">
+          <th mat-header-cell *matHeaderCellDef> DATA </th>
+          <td mat-cell *matCellDef="let produto"> {{produto.dataDoCadastro}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="VALOR">
+          <th mat-header-cell *matHeaderCellDef> VALOR</th>
+          <td mat-cell *matCellDef="let produto"> {{produto.valor}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="AÇÕES">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let produto">
+              <button routerLink="/editarProduto/{{produto.id}}" mat-raised-button color="accent">Editar</button>
+        </ng-container>
+    
+        <ng-container matColumnDef="EXCLUIR">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let produto">
+              <button mat-raised-button color="warn" (click)="openDialog(produto.id)">Excluir</button>
+          </td>
+      </ng-container>
+  
+    
+        <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+        <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+      </table>
+      <div class="btn-box">
+        <button routerLink="" mat-flat-button color="primary">Voltar</button>
+      </div>
+</mat-card>

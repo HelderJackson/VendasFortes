@@ -1,0 +1,8 @@
+<div *ngIf="fornecedor">
+    <app-fornecedor-form 
+        [btnAcao]="btnAcao" 
+        [btnTitulo]="btnTitulo" 
+        [dadosFornecedor] = "fornecedor"
+        (onSubmit)="editarFornecedor($event)"> 
+    </app-fornecedor-form>
+</div>

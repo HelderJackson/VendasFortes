@@ -1,0 +1,8 @@
+<div *ngIf="produto">
+    <app-produto-form
+        [btnAcao]="btnAcao" 
+        [btnTitulo]="btnTitulo" 
+        [dadosProdutos] = "produto"
+        (onSubmit)="editarProduto($event)">
+    </app-produto-form>
+</div>

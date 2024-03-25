@@ -1,0 +1,48 @@
+<mat-card>
+<h1>{{btnTitulo}}</h1>
+
+<form [formGroup]="fornecedorForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <input type="hidden" formControlName="id">
+    
+    <div class="input_box">
+        <mat-form-field>
+           <mat-label>Razão:</mat-label>
+           <input matInput type="text" formControlName="razaosocial" placeholder="Digite a Razão Social" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>CNPJ:</mat-label>
+            <input matInput type="text" formControlName="cnpj" placeholder="Digite o CNPJ" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>UF:</mat-label>
+            <input matInput type="text" formControlName="uf" placeholder="Digite a UF" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>Email:</mat-label>
+            <input matInput type="text" formControlName="emailDeContato" placeholder="Digite seu E-mail de Contato." required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>Nome:</mat-label>
+            <input matInput type="text" formControlName="nomeDoContato" placeholder="Digite seu Nome de Contato." required>
+        </mat-form-field>
+    </div>
+
+    <div class="btn-box">
+        <button type="submit" [disabled]="!fornecedorForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+        <button routerLink="" mat-flat-button color="primary">Voltar</button>
+    </div>
+
+</form>
+</mat-card>
